@@ -14,6 +14,7 @@ public class KochManager implements Observer {
     KochFractal koch;
     JSF31KochFractalFX application;
     ArrayList<Edge> edgeList = new ArrayList<>();
+    public int count;
 
     public KochManager(JSF31KochFractalFX application)
     {
@@ -22,7 +23,7 @@ public class KochManager implements Observer {
         this.koch.addObserver(this);
     }
 
-    public void drawEdges(){
+    public synchronized void drawEdges(){
         application.clearKochPanel();
 
         int i = 0;
@@ -46,16 +47,44 @@ public class KochManager implements Observer {
         edgeList.clear();
         TimeStamp timeStamp = new TimeStamp();
         timeStamp.setBegin("Starting generating");
-        koch.generateLeftEdge();
-        koch.generateBottomEdge();
-        koch.generateRightEdge();
+
+        EdgeGenerator edgeGeneratorLeft = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,1);
+        Thread thread = new Thread(edgeGeneratorLeft, "EdgeGeneratorThread");
+        edgeGeneratorLeft.addObserver(this);
+
+        EdgeGenerator edgeGeneratorRight = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,2);
+        Thread thread2 = new Thread(edgeGeneratorRight, "EdgeGeneratorThread2");
+        edgeGeneratorRight.addObserver(this);
+
+        EdgeGenerator edgeGeneratorBottom = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,3);
+        Thread thread3 = new Thread(edgeGeneratorBottom, "EdgeGeneratorThread3");
+        edgeGeneratorBottom.addObserver(this);
+
+        thread.start();
+        thread2.start();
+        thread3.start();
+
+        thread.interrupt();
+        thread2.interrupt();
+        thread3.interrupt();
+
         timeStamp.setEnd("Ending generating");
         application.setTextCalc(timeStamp.toString());
         drawEdges();
     }
 
+    public synchronized void increaseCount()
+    {
+        count++;
+
+        if (count >= 3){
+            application.requestDrawEdges();
+            count = 0;
+        }
+    }
+
     @Override
-    public void update(Observable o, Object arg)
+    public synchronized void update(Observable o, Object arg)
     {
         edgeList.add((Edge)arg);
     }
