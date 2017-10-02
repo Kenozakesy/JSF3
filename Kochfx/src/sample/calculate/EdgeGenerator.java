@@ -78,7 +78,7 @@ public class EdgeGenerator extends Observable implements Runnable{
         }
     }
 
-        synchronized void generateLeftEdge() {
+    synchronized void generateLeftEdge() {
         if (!finished){
 
             hue = 0f;
@@ -86,22 +86,24 @@ public class EdgeGenerator extends Observable implements Runnable{
             drawKochEdge(0.5, 0.0, (1 - Math.sqrt(3.0) / 2.0) / 2, 0.75, level);
             kochManager.increaseCount();
         }
-        }
+    }
 
-         synchronized void generateBottomEdge() {
+    synchronized void generateBottomEdge() {
         if (!finished){
             hue = 1f / 3f;
             cancelled = false;
             drawKochEdge((1 - Math.sqrt(3.0) / 2.0) / 2, 0.75, (1 + Math.sqrt(3.0) / 2.0) / 2, 0.75, level);
             kochManager.increaseCount();
-        }}
+        }
+    }
 
-         synchronized void generateRightEdge() {
+    synchronized void generateRightEdge() {
         if(!finished){
             hue = 2f / 3f;
             cancelled = false;
             drawKochEdge((1 + Math.sqrt(3.0) / 2.0) / 2, 0.75, 0.5, 0.0, level);
             kochManager.increaseCount();
-        }}
+        }
+    }
 
 }

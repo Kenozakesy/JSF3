@@ -3,6 +3,10 @@ package sample.calculate;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import sample.timeutil.TimeStamp;
 import sample.jsf31kochfractalfx.*;
 
@@ -27,17 +31,11 @@ public class KochManager implements Observer {
         application.clearKochPanel();
 
         int i = 0;
-        TimeStamp timeStamp = new TimeStamp();
-        timeStamp.setBegin("Starting the drawing");
-
         for (Edge edge : edgeList)
         {
             application.drawEdge(edge);
             i++;
         }
-
-        timeStamp.setEnd("Ending the drawing");
-        application.setTextDraw(timeStamp.toString());
         application.setTextNrEdges(String.valueOf(i));
     }
 
@@ -48,25 +46,61 @@ public class KochManager implements Observer {
         TimeStamp timeStamp = new TimeStamp();
         timeStamp.setBegin("Starting generating");
 
-        EdgeGenerator edgeGeneratorLeft = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,1);
-        Thread thread = new Thread(edgeGeneratorLeft, "EdgeGeneratorThread");
-        edgeGeneratorLeft.addObserver(this);
+        ExecutorService ex = Executors.newFixedThreadPool(4);
 
-        EdgeGenerator edgeGeneratorRight = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,2);
-        Thread thread2 = new Thread(edgeGeneratorRight, "EdgeGeneratorThread2");
-        edgeGeneratorRight.addObserver(this);
+        // maak lijst van callables
+        ArrayList<Callable> callables = new ArrayList<Callable>();
 
-        EdgeGenerator edgeGeneratorBottom = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,3);
-        Thread thread3 = new Thread(edgeGeneratorBottom, "EdgeGeneratorThread3");
-        edgeGeneratorBottom.addObserver(this);
+        int k = 1;
+        for (int i = 0; i < 3; i++) {
 
-        thread.start();
-        thread2.start();
-        thread3.start();
+            Callable c = new MyCallable(this.koch, this, k);
+            // voeg toe aan verzameling
+            callables.add(c);
+            // submit in threadpool
+            Future<ArrayList<Edge>> Fedgelist = ex.submit(c);
 
-        thread.interrupt();
-        thread2.interrupt();
-        thread3.interrupt();
+            try {
+                for (Edge e: Fedgelist.get()) {
+                    edgeList.add(e);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+            k++;
+            if(k > 3)
+            {
+                k = 1;
+            }
+        }
+
+        // stop de threads en de pool
+        ex.shutdown();
+
+
+
+//        EdgeGenerator edgeGeneratorLeft = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,1);
+//        Thread thread = new Thread(edgeGeneratorLeft, "EdgeGeneratorThread");
+//        edgeGeneratorLeft.addObserver(this);
+//
+//        EdgeGenerator edgeGeneratorRight = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,2);
+//        Thread thread2 = new Thread(edgeGeneratorRight, "EdgeGeneratorThread2");
+//        edgeGeneratorRight.addObserver(this);
+//
+//        EdgeGenerator edgeGeneratorBottom = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,3);
+//        Thread thread3 = new Thread(edgeGeneratorBottom, "EdgeGeneratorThread3");
+//        edgeGeneratorBottom.addObserver(this);
+//
+//        thread.start();
+//        thread2.start();
+//        thread3.start();
+//
+//        thread.interrupt();
+//        thread2.interrupt();
+//        thread3.interrupt();
 
         timeStamp.setEnd("Ending generating");
         application.setTextCalc(timeStamp.toString());
@@ -94,6 +128,6 @@ public class KochManager implements Observer {
     @Override
     public synchronized void update(Observable o, Object arg)
     {
-        edgeList.add((Edge)arg);
+       // edgeList.add((Edge)arg);
     }
 }
