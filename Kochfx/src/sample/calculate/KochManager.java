@@ -70,7 +70,15 @@ public class KochManager implements Observer {
 
         timeStamp.setEnd("Ending generating");
         application.setTextCalc(timeStamp.toString());
-        drawEdges();
+
+
+        TimeStamp stamp2 = new TimeStamp();
+        stamp2.setBegin("begin draw method");
+
+        drawEdges(); //draw edges
+
+        stamp2.setEnd("end drawing");
+        application.setTextDraw(stamp2.toString());
     }
 
     public synchronized void increaseCount()
