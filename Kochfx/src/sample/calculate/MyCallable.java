@@ -17,8 +17,6 @@ public class MyCallable implements Observer, Callable<ArrayList<Edge>>
     private KochFractal koch;
     //private int level = 1;      // The current level of the fractal
     //private int nrOfEdges = 3;  // The number of edges in the current level of the fractal
-    private float hue;          // Hue value of color for next edge
-    private boolean cancelled;  // Flag to indicate that calculation has been cancelled
     boolean finished = false;
     private int edge;
     KochManager kochManager;
@@ -36,6 +34,7 @@ public class MyCallable implements Observer, Callable<ArrayList<Edge>>
             case 3:
                 koch.generateBottomEdge();
                 break;
+                default: break;
         }
 
         return edges;

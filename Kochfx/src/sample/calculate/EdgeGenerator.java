@@ -32,6 +32,7 @@ public class EdgeGenerator extends Observable implements Runnable{
                 case 3:
                     generateBottomEdge();
                     break;
+                default: break;
             }
 
             if (Thread.currentThread().isInterrupted() && this.finished)
@@ -57,7 +58,7 @@ public class EdgeGenerator extends Observable implements Runnable{
                 Edge e = new Edge(ax, ay, bx, by, Color.hsb(hue*360.0, 1.0, 1.0));
                 this.setChanged();
                 this.notifyObservers(e);
-                boolean sd;
+
             }
             else {
                 double angle = Math.PI / 3.0 + Math.atan2(by - ay, bx - ax);
@@ -67,7 +68,7 @@ public class EdgeGenerator extends Observable implements Runnable{
                 final double midabx = (bx - ax) / 3 + ax;
                 final double midaby = (by - ay) / 3 + ay;
 
-                boolean ss;
+
                 drawKochEdge(ax, ay, midabx, midaby, n - 1);
                 drawKochEdge(midabx, midaby, cx, cy, n - 1);
                 drawKochEdge(cx, cy, (midabx + bx) / 2, (midaby + by) / 2, n - 1);

@@ -1,19 +1,14 @@
 package sample.calculate;
 
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.concurrent.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import sample.timeutil.TimeStamp;
 import sample.jsf31kochfractalfx.*;
 
 /**
  * Created by Jordi on 18-9-2017.
  */
-public class KochManager implements Observer {
+public class KochManager  {
 
     KochFractal koch;
     JSF31KochFractalFX application;
@@ -24,7 +19,6 @@ public class KochManager implements Observer {
     {
         this.application = application;
         this.koch = new KochFractal();
-        this.koch.addObserver(this);
     }
 
     public synchronized void drawEdges(){
@@ -80,28 +74,6 @@ public class KochManager implements Observer {
         // stop de threads en de pool
         ex.shutdown();
 
-
-
-//        EdgeGenerator edgeGeneratorLeft = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,1);
-//        Thread thread = new Thread(edgeGeneratorLeft, "EdgeGeneratorThread");
-//        edgeGeneratorLeft.addObserver(this);
-//
-//        EdgeGenerator edgeGeneratorRight = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,2);
-//        Thread thread2 = new Thread(edgeGeneratorRight, "EdgeGeneratorThread2");
-//        edgeGeneratorRight.addObserver(this);
-//
-//        EdgeGenerator edgeGeneratorBottom = new EdgeGenerator(koch.getLevel(),koch.getNrOfEdges(),this,3);
-//        Thread thread3 = new Thread(edgeGeneratorBottom, "EdgeGeneratorThread3");
-//        edgeGeneratorBottom.addObserver(this);
-//
-//        thread.start();
-//        thread2.start();
-//        thread3.start();
-//
-//        thread.interrupt();
-//        thread2.interrupt();
-//        thread3.interrupt();
-
         timeStamp.setEnd("Ending generating");
         application.setTextCalc(timeStamp.toString());
 
@@ -124,10 +96,6 @@ public class KochManager implements Observer {
             count = 0;
         }
     }
-
-    @Override
-    public synchronized void update(Observable o, Object arg)
-    {
-       // edgeList.add((Edge)arg);
-    }
 }
+
+
