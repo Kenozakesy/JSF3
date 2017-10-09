@@ -21,7 +21,8 @@ import javafx.stage.Stage;
  * @author Nico Kuijpers
  */
 public class MovingBallsFX extends Application {
-    
+
+    private ReadWrite readwrite = new ReadWrite();
     private Thread threadDraw;
     private Ball[] ballArray = new Ball[10];
     private Thread[] threadArray = new Thread[10];
@@ -109,7 +110,7 @@ public class MovingBallsFX extends Application {
             // Reader selected: new red ball
             Ball b = new Ball(minX, maxX, minCsX, maxCsX, y, Color.RED);
             ballArray[index] = b;
-            Thread t = new Thread(new BallRunnable(b));
+            Thread t = new Thread(new BallRunnable(b, readwrite));
             threadArray[index] = t;
             circleArray[index].setVisible(true);
             t.start();
@@ -117,7 +118,7 @@ public class MovingBallsFX extends Application {
             // Writer selected: new blue ball
             Ball b = new Ball(minX, maxX, minCsX, maxCsX, y, Color.BLUE);
             ballArray[index] = b;
-            Thread t = new Thread(new BallRunnable(b));
+            Thread t = new Thread(new BallRunnable(b, readwrite));
             threadArray[index] = t;
             circleArray[index].setVisible(true);
             t.start();
