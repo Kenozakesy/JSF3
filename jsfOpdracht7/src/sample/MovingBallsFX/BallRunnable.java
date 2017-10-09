@@ -26,13 +26,22 @@ public class BallRunnable implements Runnable {
         while (!Thread.currentThread().isInterrupted()) {
             try {
 
-                if (ball.getColor() ==  Color.RED && ball.isEnteringCs())
+                if (ball.getColor() == Color.RED && ball.isEnteringCs())
                 {
                     readWrite.enterReader();
                 }
-                else if (ball.isLeavingCs()) {
+                else if (ball.isLeavingCs() && ball.getColor() == Color.RED) {
                     readWrite.exitReader();
                 }
+
+                if (ball.getColor() == Color.BLUE && ball.isEnteringCs())
+                {
+                    readWrite.enterWriter();
+                }
+                else if (ball.isLeavingCs() && ball.getColor() == Color.BLUE ) {
+                    readWrite.exitWriter();
+                }
+
                 ball.move();
                 Thread.sleep(ball.getSpeed());
 

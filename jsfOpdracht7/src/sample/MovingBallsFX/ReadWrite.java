@@ -11,6 +11,10 @@ public class ReadWrite {
     Lock monLock = new ReentrantLock();
     int readersActive = 0;
     int writersActive = 0;
+    int readersWaiting = 0;
+    int writersWaiting = 0;
+
+
     Condition okToRead = monLock.newCondition();
     Condition okToWrite = monLock.newCondition();
 
@@ -20,8 +24,10 @@ public class ReadWrite {
     public void enterReader() throws InterruptedException {
         monLock.lock();
         try {
-            while (writersActive > 0) {
+            while (writersActive != 0) {
+                readersWaiting++;
                 okToRead.await();
+                readersWaiting--;
             }
             readersActive++;
         } finally {
@@ -41,15 +47,13 @@ public class ReadWrite {
         }
     }
 
-    public void enterWriter() {
+    public void enterWriter() throws InterruptedException {
         monLock.lock();
         try {
             while (writersActive > 0 || readersActive > 0) {
-                try {
-                    okToWrite.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                writersWaiting++;
+                okToWrite.await();
+                writersWaiting--;
             }
             writersActive++;
         } finally {
@@ -61,12 +65,14 @@ public class ReadWrite {
         monLock.lock();
         try {
             writersActive--;
-            if (writersActive == 0) {
-                okToRead.signal();
+            if (writersWaiting > 0 && writersActive == 0) {
+                okToWrite.signal();
+            } else {
+                okToRead.signalAll();
             }
         } finally {
             monLock.unlock();
         }
     }
 
-}
+    }
