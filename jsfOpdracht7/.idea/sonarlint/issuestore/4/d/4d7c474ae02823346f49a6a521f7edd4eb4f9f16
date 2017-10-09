@@ -1,0 +1,8 @@
+
+`squid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(è®ã¶øÿÿÿÿ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(ë§Äõ
+Bsquid:S1604"(Make this anonymous inner class a lambda(ôâŠûıÿÿÿÿ
+Fsquid:S1172",Remove this unused method parameter "event".(êñØ·ùÿÿÿÿ
+:squid:S3398"%Move this method into "DrawRunnable".(ÊùıË
+<squid:S2189""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ
+Dsquid:S00108")Either remove or fill this block of code.(è®ã¶øÿÿÿÿ
