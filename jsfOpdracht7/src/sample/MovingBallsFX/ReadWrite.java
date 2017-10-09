@@ -59,8 +59,8 @@ public class ReadWrite
                } catch (InterruptedException e) {
                    e.printStackTrace();
                }
-               writersActive++;
            }
+           writersActive++;
        }
        finally
        {
