@@ -8,7 +8,6 @@ package sample.MovingBallsFX;
 import javafx.scene.paint.Color;
 
 /**
- *
  * @author Peter Boots
  */
 public class BallRunnable implements Runnable {
@@ -26,19 +25,15 @@ public class BallRunnable implements Runnable {
         while (!Thread.currentThread().isInterrupted()) {
             try {
 
-                if (ball.getColor() == Color.RED && ball.isEnteringCs())
-                {
+                if (ball.getColor() == Color.RED && ball.isEnteringCs()) {
                     readWrite.enterReader();
-                }
-                else if (ball.isLeavingCs() && ball.getColor() == Color.RED) {
+                } else if (ball.isLeavingCs() && ball.getColor() == Color.RED) {
                     readWrite.exitReader();
                 }
 
-                if (ball.getColor() == Color.BLUE && ball.isEnteringCs())
-                {
+                if (ball.getColor() == Color.BLUE && ball.isEnteringCs()) {
                     readWrite.enterWriter();
-                }
-                else if (ball.isLeavingCs() && ball.getColor() == Color.BLUE ) {
+                } else if (ball.isLeavingCs() && ball.getColor() == Color.BLUE) {
                     readWrite.exitWriter();
                 }
 
@@ -46,9 +41,10 @@ public class BallRunnable implements Runnable {
                 Thread.sleep(ball.getSpeed());
 
             } catch (InterruptedException ex) {
+                readWrite.fixBalls(ball);
                 Thread.currentThread().interrupt();
             }
         }
     }
-
 }
+

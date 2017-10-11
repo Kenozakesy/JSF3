@@ -1,5 +1,7 @@
 package sample.MovingBallsFX;
 
+import javafx.scene.paint.Color;
+
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -19,10 +21,12 @@ public class ReadWrite {
     Condition okToWrite = monLock.newCondition();
 
     public ReadWrite() {
+        // empty constructor just for initializing
     }
 
     public void enterReader() throws InterruptedException {
         monLock.lock();
+
         try {
             while (writersActive != 0) {
                 readersWaiting++;
@@ -37,6 +41,7 @@ public class ReadWrite {
 
     public void exitReader() {
         monLock.lock();
+
         try {
             readersActive--;
             if (readersActive == 0) {
@@ -49,6 +54,7 @@ public class ReadWrite {
 
     public void enterWriter() throws InterruptedException {
         monLock.lock();
+
         try {
             while (writersActive > 0 || readersActive > 0) {
                 writersWaiting++;
@@ -63,6 +69,7 @@ public class ReadWrite {
 
     public void exitWriter() {
         monLock.lock();
+
         try {
             writersActive--;
             if (writersWaiting > 0 && writersActive == 0) {
@@ -75,4 +82,34 @@ public class ReadWrite {
         }
     }
 
+    public void fixBalls(Ball ball) {
+        monLock.lock();
+
+        try {
+            if (ball.getColor() == Color.BLUE) {
+                if (ball.isEnteringCs()) {
+                    writersWaiting--;
+                } else if (ball.isInsideCS()) {
+                    writersActive--;
+                }
+            } else if (ball.getColor() == Color.RED) {
+                if (ball.isEnteringCs()) {
+                    readersWaiting--;
+                } else if (ball.isInsideCS()) {
+                    readersActive--;
+                }
+            }
+
+            if (writersWaiting == 0 && writersActive == 0) {
+                okToRead.signalAll();
+            } else if (writersWaiting > 0) {
+                okToWrite.signal();
+            }
+        } finally {
+            monLock.unlock();
+        }
     }
+
+}
+
+
