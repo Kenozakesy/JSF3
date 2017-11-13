@@ -22,6 +22,7 @@ public class ReadWrite {
 
     public ReadWrite() {
         // empty constructor just for initializing
+        // this is required
     }
 
     public void enterReader() throws InterruptedException {
