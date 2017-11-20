@@ -1,0 +1,18 @@
+
+Žsquid:S1319"sThe type of the "edgelist" object should be an interface such as "List" rather than the implementation "ArrayList".(ÅìÁ~8ÔÖáÆý+
+?squid:S1148"#Use a logger to log this exception.(Ç’Çê8±°àÆý+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8±°àÆý+
+S
+squid:S106"9Replace this use of System.out or System.err by a logger.(Çðõ"8ÍüçÅý+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8±°àÆý+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÍüçÅý+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8‘é‹Æý+
+`squid:S2147"DCombine this catch with the one at line 26, which has the same body.(ï­£Ä8‘é‹Æý+
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(‚ãÐ—
+Xsquid:S2589"7Remove this expression which always evaluates to "true"(ÚÀ”Ñúÿÿÿÿ8‘ˆ›Èý+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÍüçÅý+
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8‘é‹Æý+
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(È¨ƒ°ÿÿÿÿÿ8ÖÐÈÆý+
+S
+squid:S106"9Replace this use of System.out or System.err by a logger.(Çðõ"8±°àÆý+
+?squid:S1148"#Use a logger to log this exception.(Ç’Çê8ÍüçÅý+
