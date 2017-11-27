@@ -1,12 +1,0 @@
-
-`squid:S2147"DCombine this catch with the one at line 25, which has the same body.(ï­£Ä8½–ŒÆý+
-msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(‚ãÐ—
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÍÂÌ8†©³Æý+
-?squid:S1148"#Use a logger to log this exception.(Ç’Çê8ÐùÆý+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8½–ŒÆý+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÐùÆý+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8½–ŒÆý+
-squid:S1319"sThe type of the "edgelist" object should be an interface such as "List" rather than the implementation "ArrayList".( ¹ÊŸ8ÐùÆý+
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÐùÆý+
-S
-squid:S106"9Replace this use of System.out or System.err by a logger.(Çðõ"8ÐùÆý+

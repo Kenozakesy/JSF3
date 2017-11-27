@@ -1,7 +1,7 @@
 package calculate;
 
 
-import WriteReader.WriteReader;
+import WriteReader.Writer;
 import timeutil.TimeStamp;
 
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ import java.util.Observer;
  * Created by Koen on 18-9-2017.
  */
 public class KochManager implements Observer {
+
 
     KochFractal koch;
     TimeStamp timeStamp = new TimeStamp();
@@ -30,15 +31,24 @@ public class KochManager implements Observer {
         koch.generateBottomEdge();
         koch.generateRightEdge();
 
-        timeStamp = new TimeStamp();
-        timeStamp.setBegin("Start writing");
 
-        WriteReader WR = new WriteReader();
-        WR.serializeEdge(edgeList);
+        Writer writer = new Writer();
 
-        //set time it takes
-        timeStamp.setEnd("End writing");
-        System.out.println(timeStamp.toString());
+        //write binary buffered
+        //writer.writeEdgesToBinaryBufferd(edgeList);
+
+        //write binary not buffered
+        //writer.writeEdgesToBinaryNotBufferd(edgeList);
+
+        //write text buffered
+        //writer.writeEdgesToTextBuffered(edgeList);
+
+        //write text not buffered
+        //writer.writeEdgesToTextNotBuffered(edgeList);
+
+        //write mappedfile
+        writer.writeEdgesMapped(edgeList);
+
     }
 
     @Override

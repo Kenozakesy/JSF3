@@ -1,8 +1,10 @@
-import WriteReader.WriteReader;
+import WriteReader.Reader;
+import WriteReader.Writer;
 import calculate.Edge;
-import calculate.KochFractal;
+import calculate.KochData;
 import calculate.KochManager;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
@@ -10,18 +12,35 @@ public class Main {
     public static void main(String[] args) {
 
         KochManager manager = new KochManager();
-        manager.changeLevel(1);
+        manager.changeLevel(7);
 
+        Reader reader = new Reader();
+        KochData kd = null;
+        try {
 
-        WriteReader WR = new WriteReader();
-        ArrayList<Edge> edges = WR.getEdges();
+            //binary
+            //kd = reader.readBinaryBuffered();
+            //kd = reader.readBinaryNotBuffered();
 
-        int tel = 0;
-        for (Edge E: edges) {
-           tel++;
+            //text
+            //kd = reader.readTextBuffered();
+            //kd = reader.readTextNotBuffered();
+
+            //mapped
+            kd = reader.readEdgesMapped();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
-        System.out.println(tel);
 
-
+        System.out.println(kd.getEdges().size());
+        System.out.println
+                (
+                        String.valueOf(kd.getEdges().get(0).X1) + "\n" +
+                                String.valueOf(kd.getEdges().get(2).X1) +  "\n" +
+                                String.valueOf(kd.getEdges().get(kd.getEdges().size() - 1).X1)
+                );
     }
 }

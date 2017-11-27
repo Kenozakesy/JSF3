@@ -16,7 +16,7 @@ import java.io.Serializable;
  *
  * @author Peter Boots
  */
-public class Edge implements Serializable{
+public class Edge implements Serializable {
 
     public double X1, Y1, X2, Y2;
     //trnasient moet erbij staan
@@ -30,21 +30,4 @@ public class Edge implements Serializable{
         this.color = color;
     }
 
-    //used to serialize colors
-    private void writeObject(ObjectOutputStream s) throws IOException {
-        s.defaultWriteObject();
-        s.writeDouble(color.getRed());
-        s.writeDouble(color.getGreen());
-        s.writeDouble(color.getBlue());
-        s.writeDouble(color.getOpacity());
-    }
-
-    private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
-        s.defaultReadObject();
-        double red = s.readDouble();
-        double green = s.readDouble();
-        double blue = s.readDouble();
-        double opacity = s.readDouble();
-        color = Color.color(red, green, blue, opacity);
-    }
 }
