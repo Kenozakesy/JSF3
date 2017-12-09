@@ -1,0 +1,41 @@
+
+6squid:S1643"Use a StringBuilder instead.(˜±«½ûÿÿÿÿ
+6squid:S1643"Use a StringBuilder instead.(Ú÷åºüÿÿÿÿ
+­%squid:RedundantThrowsDeclarationCheck"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(—Å¯ûÿÿÿÿ
+§%squid:RedundantThrowsDeclarationCheck"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(Ê†“0
+¨%squid:RedundantThrowsDeclarationCheck"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(¡ªÇî
+Vsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(–È¸¢
+Vsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(ÙÌù
+ssquid:S1192"YDefine a constant instead of duplicating this literal "Stop - Read Text Bufferd" 3 times.(¿À¬Êùÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ı™øøÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+_squid:S2674"JCheck the return value of the "read" call to see how many bytes were read.(í‡Œ
+_squid:S2674"JCheck the return value of the "read" call to see how many bytes were read.(í‡Œ
+Esquid:S1905"+Remove this unnecessary cast to "KochData".(˜í‰ßûÿÿÿÿ
+Esquid:S1905"+Remove this unnecessary cast to "KochData".(˜í‰ßûÿÿÿÿ
+Esquid:S1905"+Remove this unnecessary cast to "KochData".(ëØ £ÿÿÿÿÿ
+6squid:S1170"!Make this final field static too.(–È¸¢
+6squid:S1170"!Make this final field static too.(ÙÌù
+Ysquid:S2147"DCombine this catch with the one at line 32, which has the same body.(ï­£Ä
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Şèêüıÿÿÿÿ
+lsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Şèêüıÿÿÿÿ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(‚ãĞ—
+Rsquid:UselessImportCheck"+Remove this unused import 'calculate.Edge'.(åâ«¢úÿÿÿÿ
+Rsquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+;squid:S2131"!Use "Character.toString" instead.(Ú÷åºüÿÿÿÿ

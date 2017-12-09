@@ -41,13 +41,13 @@ public class KochManager implements Observer {
         //writer.writeEdgesToBinaryNotBufferd(edgeList);
 
         //write text buffered
-        //writer.writeEdgesToTextBuffered(edgeList);
+        writer.writeEdgesToTextBuffered(edgeList);
 
         //write text not buffered
         //writer.writeEdgesToTextNotBuffered(edgeList);
 
         //write mappedfile
-        writer.writeEdgesMapped(edgeList);
+        //writer.writeEdgesMapped(edgeList);
 
     }
 

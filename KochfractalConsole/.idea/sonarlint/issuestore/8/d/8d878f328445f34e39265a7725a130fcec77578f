@@ -1,0 +1,17 @@
+
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¸­‚Ë
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Äœß„üÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ùÓÝþ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(©˜¤î
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(áñÿ”ùÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(õâÕë
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ß£õ¸ýÿÿÿÿ
+Dsquid:S2440"*Remove this instantiation of "NotifyRead".(š¬ª›ÿÿÿÿÿ
+1squid:S1220""Move this file to a named package.
+Osquid:S2209"5Change this instance-reference to a static reference.(ßêÌäþÿÿÿÿ
+Qsquid:UselessImportCheck"/Remove this unused import 'WriteReader.Reader'.(‡óÖ¶
+Vsquid:UselessImportCheck"/Remove this unused import 'calculate.KochData'.(Âð•àûÿÿÿÿ

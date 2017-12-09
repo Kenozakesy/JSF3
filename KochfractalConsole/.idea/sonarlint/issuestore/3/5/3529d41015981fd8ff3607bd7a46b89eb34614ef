@@ -1,0 +1,42 @@
+
+Vsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(ÙÌù
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(’¾§È
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(æÊø
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ğŠÓÏıÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(•Ú¶å
+…squid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(¦§ìı
+…squid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(™§£û
+Šsquid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(—ŒÙ¾ùÿÿÿÿ
+…squid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(ˆö°Á
+…squid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(’µ¯¹
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(”é›
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(”é›
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÊúŒ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ä°õ¯üÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ı™øøÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ğ„¾ºúÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(’Ø¸¡üÿÿÿÿ
+6squid:S1170"!Make this final field static too.(ÙÌù
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(‚ãĞ—
+Esquid:S1153"1Directly append the argument of String.valueOf().(²ˆ¡6
+Fsquid:S1153"1Directly append the argument of String.valueOf().(Ö¤¾ó
+[
+squid:S899"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+[
+squid:S899"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ

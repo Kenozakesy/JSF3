@@ -22,21 +22,20 @@ public class Writer {
 
     FileOutputStream binaryFilePath = null;
     FileWriter textFilePath = null;
-    private final String binaryPath = "C:\\Users\\Gebruiker\\Documents\\IntelliJProjects\\KochfractalConsole\\Files\\binary.ser";
+    //private final String binaryPath = "C:\\Users\\Gebruiker\\Documents\\IntelliJProjects\\KochfractalConsole\\Files\\binary.ser";
     private final String textPath = "C:\\Users\\Gebruiker\\Documents\\IntelliJProjects\\KochfractalConsole\\Files\\Edges.txt";
     //File nonBinaryFilepath
 
     public Writer() {
-        try {
-            binaryFilePath = new FileOutputStream("C:\\Users\\Gebruiker\\Documents\\IntelliJProjects\\KochfractalConsole\\Files\\binary.ser");
-            textFilePath = new FileWriter("C:\\Users\\Gebruiker\\Documents\\IntelliJProjects\\KochfractalConsole\\Files\\Edges.txt");
-           // nonBinaryFilepath =
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            binaryFilePath = new FileOutputStream("C:\\Users\\Gebruiker\\Documents\\IntelliJProjects\\KochfractalConsole\\Files\\binary.ser");
+//            textFilePath = new FileWriter("C:\\Users\\Gebruiker\\Documents\\IntelliJProjects\\KochfractalConsole\\Files\\Edges.txt");
+//
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     //------------ Write ------------\\
