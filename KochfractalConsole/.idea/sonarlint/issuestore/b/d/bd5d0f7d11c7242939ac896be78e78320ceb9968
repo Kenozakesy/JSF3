@@ -1,0 +1,17 @@
+
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(’Ø¸¡üÿÿÿÿ
+Msquid:S1153"1Directly append the argument of String.valueOf().(Ö¤¾ó8½·ÖÚƒ,
+Lsquid:S1153"1Directly append the argument of String.valueOf().(²ˆ¡68½·ÖÚƒ,
+\squid:S2259"@A "NullPointerException" could be thrown; "kd" is nullable here.(ÊúÍË8½·ÖÚƒ,
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¼æ¤Î
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Õ¾™Ò
+–squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(’†ãµ
+Ysquid:S2147"DCombine this catch with the one at line 35, which has the same body.(ıàÑÎ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(¦Ñ÷ˆ
+2squid:S1118"Hide this public constructor.(’†ãµ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Éª°”
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÊúÍË
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ

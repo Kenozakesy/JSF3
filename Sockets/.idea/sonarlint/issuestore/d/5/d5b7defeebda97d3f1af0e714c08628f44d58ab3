@@ -1,0 +1,15 @@
+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.( êã“ûÿÿÿÿ8“‚–©„,
+Osquid:S1481".Remove this unused "ObjectOut" local variable.(Ý‰Ãøþÿÿÿÿ8“‚–©„,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ó¼Ìô8Ê†Î¨„,
+Psquid:S1068"/Remove this unused "messageList" private field.(µÑ˜úúÿÿÿÿ8½Õò¨„,
+]squid:S1854"<Remove this useless assignment to local variable "ObjectIn".(´©›Êûÿÿÿÿ8ƒˆŽ©„,
+esquid:UselessImportCheck"7Remove this unused import 'Interfaces.OnClientMessage'.(Áð©ÿÿÿÿÿ8þ·§¨„,
+^squid:S1854"=Remove this useless assignment to local variable "ObjectOut".(Ý‰Ãøþÿÿÿÿ8“‚–©„,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ý‰Ãøþÿÿÿÿ8ƒˆŽ©„,
+Ksquid:S00108")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿ8žáŽ©„,
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ýÒ½«8æêÅ©„,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´©›Êûÿÿÿÿ8ƒˆŽ©„,
+\squid:UselessImportCheck".Remove this unused import 'Enums.MessageType'.(†¦¾Üÿÿÿÿÿ8þ·§¨„,
+Nsquid:S1481"-Remove this unused "ObjectIn" local variable.(´©›Êûÿÿÿÿ8×Ò©„,
+tsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(¿ÀŠ­8æ´À©„,

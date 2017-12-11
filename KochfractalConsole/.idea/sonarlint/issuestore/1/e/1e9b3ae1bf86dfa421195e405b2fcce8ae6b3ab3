@@ -1,0 +1,42 @@
+
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ð„¾ºúÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(’¾§È
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(”é›
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(•Ú¶å
+…squid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(ˆö°Á
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ðŠÓÏýÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ð„¾ºúÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÊúŒŽ
+[
+squid:S899"BDo something with the "boolean" value returned by "createNewFile".(Ð’Íùÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(”é›
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ð„¾ºúÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŽæÊø
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ð„¾ºúÿÿÿÿ
+Lsquid:S1153"1Directly append the argument of String.valueOf().(²ˆ¡68¾·ÖÚƒ,
+Msquid:S1153"1Directly append the argument of String.valueOf().(Ö¤¾ó8¾·ÖÚƒ,
+…squid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(¦§ìý
+Šsquid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(—ŒÙ¾ùÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ð„¾ºúÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(’Ø¸¡üÿÿÿÿ
+6squid:S1170"!Make this final field static too.(ÙÌù
+…squid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(’µ¯¹
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(‚ãÐ—
+Vsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(ÙÌù
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ý™øøÿÿÿÿ
+[
+squid:S899"BDo something with the "boolean" value returned by "createNewFile".(Ð’Íùÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ä°õ¯üÿÿÿÿ
+…squid:S1319"pThe type of the "edges" object should be an interface such as "List" rather than the implementation "ArrayList".(™§£û

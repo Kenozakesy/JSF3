@@ -1,0 +1,15 @@
+
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(©˜¤î
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Äœß„üÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(áñÿ”ùÿÿÿÿ
+\squid:UselessImportCheck";Remove this unused import 'javafx.application.Application'.(í™þj
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(¦Ñ÷ˆ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ß£õ¸ýÿÿÿÿ
+–squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‹ôŸè
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(õâÕë
+Vsquid:S2209"5Change this instance-reference to a static reference.(ßêÌäþÿÿÿÿ8½·ÖÚƒ,
+Ksquid:S2440"*Remove this instantiation of "NotifyRead".(š¬ª›ÿÿÿÿÿ8½·ÖÚƒ,

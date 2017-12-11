@@ -1,0 +1,5 @@
+
+Wsquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ
+1squid:S1220""Move this file to a named package.
+Vsquid:UselessImportCheck"/Remove this unused import 'calculate.KochData'.(Âð•àûÿÿÿÿ
+Qsquid:UselessImportCheck"/Remove this unused import 'WriteReader.Reader'.(‡óÖ¶
