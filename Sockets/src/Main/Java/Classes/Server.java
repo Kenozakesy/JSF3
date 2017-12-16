@@ -20,12 +20,13 @@ import java.util.List;
 public class Server implements Runnable
 {
     private static List<ChatMessage> messageList = new ArrayList<>();
+    ServerSocket server;
 
 
     @Override
     public void run()
     {
-        try (ServerSocket s = new ServerSocket(8189))
+        try ( ServerSocket s = new ServerSocket(8189))
         {
             while (!s.isClosed())
             {
@@ -82,19 +83,30 @@ public class Server implements Runnable
                             out.flush();
                         } else if (inObject instanceof String) {
                             String woord = (String) inObject;
-                            System.out.println("Level : "+woord);
-                            int level = Integer.valueOf(woord);
-
-                            KochManager manager = new KochManager();
-                            ArrayList<Edge> edges = manager.changeLevel(level);
-                            KochData data = new KochData(edges);
-
-                            ObjectOut.writeObject(data);
-                            out.flush();
 
                             if (woord.equals("BYE")) {
                                 done = true;
+
+                                ObjectOut.writeObject(woord);
+                                out.flush();
+
                             }
+
+                            else {
+                                int level = Integer.valueOf(woord);
+
+                                KochManager manager = new KochManager(ObjectOut);
+                                ArrayList<Edge> edges = manager.changeLevel(level);
+                              //  KochData data = new KochData(edges);
+
+                             //   ObjectOut.writeObject(data);
+                             //   out.flush();
+
+
+
+
+                            }
+
                         }
                     } catch (ClassNotFoundException e) {
                         // TODO Auto-generated catch block
@@ -103,12 +115,16 @@ public class Server implements Runnable
                     //
                 }
 
-                //incommingSocket.close();
+
+                incommingSocket.close();
             }
-            catch (Exception e)
+
+            catch (IOException e)
             {
 
             }
+
+
         }
 
     }

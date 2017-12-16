@@ -1,6 +1,7 @@
 package sample;
 
 import Classes.ChatMessage;
+import KochfractalPackage.Edge;
 import KochfractalPackage.KochData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -50,15 +51,16 @@ public class Client extends Application  {
 
 
                 // send Level
-                String level = "9";
+                String level = "3";
 
                 System.out.println(level);
                 out.writeObject(level);
                 out.flush();
 
                 // get edges
-                KochData data = (KochData)in.readObject();
-                System.out.println("generated edges: "+ data.getEdges().size());
+                Edge data = (Edge)in.readObject();
+
+                System.out.println("generated edges: "+ data.X1);
 
 //                // send object
 //                ChatMessage message = new ChatMessage("Hello");
@@ -79,6 +81,7 @@ public class Client extends Application  {
             finally
             {
                 s.close();
+
             }
         }
         catch (IOException e)
