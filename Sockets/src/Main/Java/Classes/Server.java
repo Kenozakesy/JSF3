@@ -4,6 +4,9 @@ package Classes;
 import Classes.ChatMessage;
 import Enums.MessageType;
 import Interfaces.OnClientMessage;
+import KochfractalPackage.Edge;
+import KochfractalPackage.KochData;
+import KochfractalPackage.KochManager;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -57,13 +60,48 @@ public class Server implements Runnable
                 ObjectInputStream ObjectIn = new ObjectInputStream(in);
                 ObjectOutputStream ObjectOut = new ObjectOutputStream(out);
 
-                //ObjectOut.writeObject();
+                ObjectOut.writeObject("hello");
+                ObjectOut.flush();
 
-                //hier gebeurt shit
+                // echo client Object input
+                boolean done = false;
+                Object inObject = null;
+                while (!done) {
+                    try {
+                        inObject = ObjectIn.readObject();
+                        if (inObject instanceof ChatMessage) {
 
 
+                            // change name //hier berekenen kochfractal
+                            ChatMessage message = (ChatMessage) inObject;
+                            System.out.println("Persoon ontvangen: "
+                                    + message.toString());
 
+                            //hier terug geven
+                            ObjectOut.writeObject(message);
+                            out.flush();
+                        } else if (inObject instanceof String) {
+                            String woord = (String) inObject;
+                            System.out.println("Level : "+woord);
+                            int level = Integer.valueOf(woord);
 
+                            KochManager manager = new KochManager();
+                            ArrayList<Edge> edges = manager.changeLevel(level);
+                            KochData data = new KochData(edges);
+
+                            ObjectOut.writeObject(data);
+                            out.flush();
+
+                            if (woord.equals("BYE")) {
+                                done = true;
+                            }
+                        }
+                    } catch (ClassNotFoundException e) {
+                        // TODO Auto-generated catch block
+                        System.out.println("Object type not known");
+                    }
+                    //
+                }
 
                 //incommingSocket.close();
             }
