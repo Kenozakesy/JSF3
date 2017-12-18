@@ -1,6 +1,7 @@
 package sample;
 
 import Classes.ChatMessage;
+import Classes.ThreadRead;
 import KochfractalPackage.Edge;
 import KochfractalPackage.KochData;
 import javafx.application.Application;
@@ -51,24 +52,22 @@ public class Client extends Application  {
 
 
                 // send Level
-                String level = "3";
+                String level = "1";
 
                 System.out.println(level);
                 out.writeObject(level);
                 out.flush();
 
                 // get edges
-                Edge data = (Edge)in.readObject();
 
-                System.out.println("generated edges: "+ data.X1);
+                while (s.isConnected()) {
+//                    KochData data = (KochData) in.readObject();
+//                    System.out.println("generated edges: " + data.getEdges().size());
 
-//                // send object
-//                ChatMessage message = new ChatMessage("Hello");
-//                System.out.println("sending ME: "+ message.toString());
-//                out.writeObject(message);
-//
-//                ChatMessage reply = (ChatMessage)in.readObject();
-//                System.out.println("ontvangen antwoord: "+ reply.toString());
+                    Edge data = (Edge) in.readObject();
+                    System.out.println("generated edges: " + data.X1);
+                    System.out.println("draw");
+                }
 
                 // close
                 out.writeObject("BYE");

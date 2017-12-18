@@ -97,13 +97,10 @@ public class Server implements Runnable
 
                                 KochManager manager = new KochManager(ObjectOut);
                                 ArrayList<Edge> edges = manager.changeLevel(level);
-                              //  KochData data = new KochData(edges);
-
-                             //   ObjectOut.writeObject(data);
-                             //   out.flush();
-
-
-
+//                                KochData data = new KochData(edges);
+//
+//                                 ObjectOut.writeObject(data);
+//                                 out.flush();
 
                             }
 

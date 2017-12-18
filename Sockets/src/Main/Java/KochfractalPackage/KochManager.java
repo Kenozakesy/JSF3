@@ -42,14 +42,14 @@ public class KochManager implements Observer {
     @Override
     public void update(Observable o, Object arg) {
 
+        edgeList.add((Edge) arg);
         try {
             stream.writeObject(arg);
             stream.flush();
         }
-
         catch (IOException e) {}
-
-
-      //  edgeList.add((Edge) arg);
+//
+//
+//      //  edgeList.add((Edge) arg);
     }
 }
